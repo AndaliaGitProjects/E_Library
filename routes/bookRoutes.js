@@ -22,12 +22,14 @@ const router = express.Router()
 router
   .route("/")
   .post(protect, allowedTo("admin"), createBooksValidator, createBook)
-  .get(getBooks)
+  .get(protect, getBooks)
 
-router.route("/:autherId/auther").get(getAutherBooksValidator, getBooksByAuthor)
+router
+  .route("/:autherId/auther")
+  .get(protect, getAutherBooksValidator, getBooksByAuthor)
 router
   .route("/:id")
-  .get(getBookValidator, getBook)
+  .get(protect, getBookValidator, getBook)
   .put(protect, allowedTo("admin"), updateBookValidator, updateBook)
   .delete(protect, allowedTo("admin"), deleteBookValidator, deleteSpecificBook)
 

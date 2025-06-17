@@ -19,10 +19,10 @@ const router = express.Router()
 router
   .route("/")
   .post(protect, allowedTo("admin"), createAutherValidator, createAuther)
-  .get(getAuthers)
+  .get(protect, getAuthers)
 router
   .route("/:id")
-  .get(getAutherValidator, getAuther)
+  .get(protect, getAutherValidator, getAuther)
   .put(protect, allowedTo("admin"), updateAutherValidator, updateAuther)
   .delete(
     protect,

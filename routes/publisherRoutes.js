@@ -9,7 +9,7 @@ const router = express.Router()
 
 router
   .route("/")
-  .get(getPublishers)
+  .get(protect, getPublishers)
   .post(protect, allowedTo("admin"), createBublisher)
 
 // router.post()
