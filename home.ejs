@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="http://localhost:8000/api/v1/auther" rel="noopener noreferrer"
+          >Authers</a
+        >
+      </li>
+      <li>
+        <a href="http://localhost:8000/api/v1/books" rel="noopener noreferrer"
+          >Books</a
+        >
+      </li>
+      <li>
+        <a
+          href="http://localhost:8000/api/v1/publisher"
+          rel="noopener noreferrer"
+          >Puplisher</a
+        >
+      </li>
+      <li><a href="http://" rel="noopener noreferrer"></a></li>
+      <li><a href="http://" rel="noopener noreferrer"></a></li>
+    </ul>
+  </body>
+  <script>
+    let links = document.querySelectorAll("a")
+    links.forEach((e) => {
+      e.href = window.location.host = "/" + e.innerHTML
+    })
+  </script>
+</html>
