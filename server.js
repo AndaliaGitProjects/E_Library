@@ -1,5 +1,5 @@
 const express = require("express")
-
+const cors = require("cors")
 const dotEnv = require("dotenv")
 dotEnv.config({ path: "dev.env" })
 
